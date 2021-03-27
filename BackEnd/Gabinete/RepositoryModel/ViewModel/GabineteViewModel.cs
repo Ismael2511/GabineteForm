@@ -20,5 +20,12 @@ namespace RepositoryModel.ViewModel
         public string celular { get; set; }
         public string lugar_residencia { get; set; }
         public string fecha_nacimiento { get; set; }
+
+        // FALLECIDO (SI QUIERES SEPARALO)
+        public string tipo_programa { get; set; }
+        public string nombre_fallecido { get; set; }
+        public string num_doc_fallecido { get; set; }
+        public string fecha_fallecimiento { get; set; }
+        public string detalles_fallecimiento { get; set; }
     }
 }

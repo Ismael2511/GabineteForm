@@ -20,6 +20,7 @@ namespace Web.Controllers
             _persona = persona;
         }
 
+        // Yo no voy a hacer GET
         [HttpGet("[action]/{id}")]
         public IActionResult GetByIdPersona([FromRoute] int id)
         {
