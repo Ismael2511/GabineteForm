@@ -9,6 +9,10 @@ namespace Repository.Service
 {
     public class EmailServices : IEmailServices
     {
+        public string url()
+        {
+            return "https://localhost:44329/files/";
+        }
         public void SendEmail(string to, string subject, string body)
         {
             try
@@ -21,7 +25,7 @@ namespace Repository.Service
                 };
                 var mailMessage = new MailMessage
                 {
-                    From = new MailAddress("prueba@oscgre.com"),
+                    From = new MailAddress("Esmerlin79@hotmail.com"),
                     Subject = subject,
                     Body = body,
                     IsBodyHtml = true,
@@ -32,16 +36,8 @@ namespace Repository.Service
             }
             catch (Exception e)
             {
-
+                throw new Exception("No se pudo enviar el correo" + e);
             }
-            //implementacion si es sin el boton mandarlo para otro html
-            /*using (WebClient client = new WebClient())
-            {
-                string htmlCode = client.DownloadString(_config.url() + "theme_email/confirmacion.html");
-
-                htmlCode = htmlCode.Replace("URL_REGISTRO", _config.urlFront() + "Credentials.html?id=" + obj.hash + "&entidad=" + obj.tipo_registro);
-                _email.SendEmail(obj.email_igle, "Bienvenido", htmlCode);
-            }*/
 
         }
     }

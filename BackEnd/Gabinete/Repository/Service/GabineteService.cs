@@ -6,6 +6,7 @@ using RepositoryModel.Validations;
 using RepositoryModel.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 
 namespace Repository.Service
@@ -14,10 +15,12 @@ namespace Repository.Service
     {
         private readonly IUnitOfWork<gabineteDbContext> _context;
         private readonly IRepository<gabineteDbContext> _repository;
-        public GabineteService(IUnitOfWork<gabineteDbContext> context, IRepository<gabineteDbContext> repository)
+        private readonly IEmailServices _email;
+        public GabineteService(IUnitOfWork<gabineteDbContext> context, IRepository<gabineteDbContext> repository, IEmailServices emai)
         {
             _context = context;
             _repository = repository;
+            _email = emai;
         }
         public DataResult Insert(GabineteViewModel model)
         {
@@ -32,7 +35,15 @@ namespace Repository.Service
                 return response;
             }
             response = _context.Insert<GabineteViewModel, mae_persona>(model);
-
+            if (response.Successfull)
+            {
+                using (WebClient client = new WebClient())
+                {
+                    string htmlCode = client.DownloadString(_email.url() + "theme_email/detalle.html");
+                    //aqui pones al correo donde llegara todo el detalle de la persona
+                    _email.SendEmail("Esmerlin79@hotmail.com", "Bienvenido", htmlCode);
+                }
+            }
             return response;
         }
         public DataResult GetById(int id)

@@ -19,6 +19,7 @@ namespace Web.Extensions
             services.AddScoped<IUserSession, UserSession>();
 
             services.AddTransient<IGabineteService, GabineteService>();
+            services.AddTransient<IEmailServices, EmailServices>();
             services.AddTransient<IUsuario, UsuarioService>();
 
             services.AddTransient<ICurso, CursoSevice>();
