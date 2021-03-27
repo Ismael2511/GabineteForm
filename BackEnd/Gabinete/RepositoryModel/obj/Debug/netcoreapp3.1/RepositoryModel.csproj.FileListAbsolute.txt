@@ -15,3 +15,4 @@ C:\Users\Haward\Desktop\javaFX-PostgreSQL\GabineteForm\BackEnd\Gabinete\Reposito
 C:\Users\Haward\Desktop\javaFX-PostgreSQL\GabineteForm\BackEnd\Gabinete\RepositoryModel\obj\Debug\netcoreapp3.1\RepositoryModel.csproj.CoreCompileInputs.cache
 C:\Users\Haward\Desktop\javaFX-PostgreSQL\GabineteForm\BackEnd\Gabinete\RepositoryModel\obj\Debug\netcoreapp3.1\RepositoryModel.dll
 C:\Users\Haward\Desktop\javaFX-PostgreSQL\GabineteForm\BackEnd\Gabinete\RepositoryModel\obj\Debug\netcoreapp3.1\RepositoryModel.pdb
+C:\Users\Haward\Desktop\javaFX-PostgreSQL\GabineteForm\BackEnd\Gabinete\RepositoryModel\obj\Debug\netcoreapp3.1\RepositoryModel.csprojAssemblyReference.cache
