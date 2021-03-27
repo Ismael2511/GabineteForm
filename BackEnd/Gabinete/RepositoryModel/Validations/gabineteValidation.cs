@@ -61,6 +61,7 @@ namespace RepositoryModel.Validations
             {
                 messages.Add("La fecha de nacimento es requerida");
             }
+            
 
             return messages;
         }

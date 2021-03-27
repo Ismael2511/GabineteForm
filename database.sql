@@ -35,6 +35,11 @@ CREATE TABLE `mae_persona` (
   `celular` varchar(30) DEFAULT NULL,
   `lugar_residencia` varchar(100) DEFAULT NULL,
   `fecha_nacimiento` varchar(50) DEFAULT NULL,
+  `tipo_programa` varchar(50) DEFAULT NULL,
+  `nombre_fallecido` varchar(50) DEFAULT NULL,
+  `num_doc_fallecido` varchar(30) DEFAULT NULL,
+  `fecha_fallecimiento` varchar(50) DEFAULT NULL,
+  `detalles_fallecimiento` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 

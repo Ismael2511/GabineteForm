@@ -29,6 +29,6 @@ namespace RepositoryModel.Model.gabineteDB
         public string nombre_fallecido { get; set; }
         public string num_doc_fallecido { get; set; }
         public string fecha_fallecimiento { get; set; }
-        public string detalles_fallecimiento { get; set; } //Ponle un (MAX), es un textarea 
+        public string detalles_fallecimiento { get; set; } 
     }
 }
