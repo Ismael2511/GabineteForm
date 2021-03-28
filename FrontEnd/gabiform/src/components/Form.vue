@@ -191,7 +191,7 @@ export default ({
                 dateDead:'',
                 caseDetail:''
             },
-            methodSave: 'savePersona'
+            methodSave: 'Gabinete/savePersona'
         }
     },
     methods:{
