@@ -2,26 +2,41 @@ import { API_URL } from "../common/config";
 import ApiService from "@/common/api.service";
 
 const Maintenance = {
-    // 1. GET Methods
+    // 1. ANCHOR  GET Methods
+
     async getAll(method) {
-        //http://localhost:52251/api/savePersona
         const request = await fetch(API_URL + method)
         const data = await request.json();
 
-        if(!data.ok) return new Error('Se produjo un Error guardando');
+        if(!data.ok) {
+            alert(new Error('Se produjo un Error guardando'));
+            return location.reload(); 
+        }
 
         return data;
     },
-    // 2. POST Methods
-    async genericSave(method,mdata) {
-        ApiService.post(API_URL + method,mdata)
-        .then(data => {
-            console.log(data)
-        }).catch(err => console.log(err))
+    async getById(method,id){
+        ApiService.getId(method,id)
     },
-    // 3. PUT / PATCH Methods
 
-    // 4. DELETE / INACTIVATE Methods
+    // 2. ANCHOR POST Methods
+
+    genericSave(method,mdata) {
+        return new Promise((resolve) => {
+            ApiService.post(API_URL + method,mdata)
+            .then(({data}) => {       
+                resolve(data)
+            })  
+            .catch(() => {
+                alert(new Error("Ha ocurrido un error con el servidor"));
+                location.reload()
+            }); 
+        });
+    },
+    
+    // 3. ANCHOR PUT / PATCH Methods
+
+    // 4. ANCHOR DELETE / INACTIVATE Methods
 }
 
 export default Maintenance;

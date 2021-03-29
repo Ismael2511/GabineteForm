@@ -19,27 +19,29 @@ const ApiService = {
     setHeader(obj)
   },
   query(resource, params) {
-    return Vue.axios.get(resource, params).catch(handleError);
+    return axios.get(resource, params).catch(handleError);
   },
 
   get(resource, slug = "") {
-    return Vue.axios.get(`${resource}/${slug}`).catch(handleError);
+    return axios.get(`${resource}/${slug}`).catch(handleError);
   },
-
+  getId(source,id){
+    return axios.get(`${source}/${id}`).catch(handleError);
+  },
   post(source, data) {
-    return axios.post(source,data).catch(handleError);
+    return axios.post(source,data)
   },
 
   update(resource, slug, params) {
-    return Vue.axios.put(`${resource}/${slug}`, params).catch(handleError);
+    return axios.put(`${resource}/${slug}`, params).catch(handleError);
   },
 
   put(resource, params) {
-    return Vue.axios.put(`${resource}`, params);
+    return axios.put(`${resource}`, params);
   },
 
   delete(resource) {
-    return Vue.axios.delete(resource).catch(handleError);
+    return axios.delete(resource).catch(handleError);
   },
   getContacts() {
     const url = `${API_URL}/Miembro/GetMember`;
@@ -64,8 +66,7 @@ function handleError(error) {
       if (error.response.status === 401) {
         // JwtService.destroyToken()
         // jwtService.destroyUser();
-
-        location.reload(true)
+        location.reload()
       }else {
         throw new Error(`[RWV] ApiService ${error}`);
       }

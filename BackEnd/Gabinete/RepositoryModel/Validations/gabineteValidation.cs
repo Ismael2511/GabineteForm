@@ -16,7 +16,7 @@ namespace RepositoryModel.Validations
         public List<string> Message()
         {
             List<string> messages = new List<string>();
-            Regex regexEmail = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+            /*Regex regexEmail = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
 
             
             if (string.IsNullOrEmpty(_model.nombre.Trim()))
@@ -60,8 +60,24 @@ namespace RepositoryModel.Validations
             if (string.IsNullOrEmpty(_model.fecha_nacimiento.Trim()))
             {
                 messages.Add("La fecha de nacimento es requerida");
+            }*/
+            if (string.IsNullOrEmpty(_model.nombre_fallecido.Trim()))
+            {
+                messages.Add("Nombre del Familiar es Requerido");
             }
-            
+            if (string.IsNullOrEmpty(_model.num_doc_fallecido.Trim()))
+            {
+                messages.Add("Numero de Documento es Requerido");
+            }
+            if (string.IsNullOrEmpty(_model.fecha_fallecimiento.Trim()))
+            {
+                messages.Add("Fecha de Fallecimiento es Requerido");
+            }
+            if (string.IsNullOrEmpty(_model.detalles_fallecimiento.Trim()) || _model.detalles_fallecimiento.Length < 150)
+            {
+                messages.Add("Detalles del Caso es Requerido (Más de 150 Carácteres)");
+            }
+
 
             return messages;
         }
