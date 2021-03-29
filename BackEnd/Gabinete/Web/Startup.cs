@@ -86,7 +86,7 @@ namespace Web
 
             services.AddCors(opt => opt.AddPolicy("CorsBase", builder =>
             {
-                builder.WithOrigins("https://localhost:8080").AllowAnyMethod().AllowAnyHeader();
+                builder.WithOrigins("http://localhost:8081").AllowAnyMethod().AllowAnyHeader();
             }));
 
             services.AddSwaggerGen(x => {
