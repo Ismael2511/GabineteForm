@@ -40,8 +40,8 @@ namespace Repository.Service
                 using (WebClient client = new WebClient())
                 {
                     string htmlCode = client.DownloadString(_email.url() + "theme_email/detalle.html");
-                    //aqui pones al correo donde llegara todo el detalle de la persona
-                    _email.SendEmail("Esmerlin79@hotmail.com", "Bienvenido", htmlCode);
+                    // info@gabinetedelafamilia.gob.do
+                    _email.SendEmail("Esmerlin79@hotmail.com", "Formulario Casos Covid-19", htmlCode);
                 }
             }
             return response;
