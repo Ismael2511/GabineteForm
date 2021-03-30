@@ -25,7 +25,7 @@ namespace Repository.Service
                 };
                 var mailMessage = new MailMessage
                 {
-                    From = new MailAddress("Esmerlin79@hotmail.com"),
+                    From = new MailAddress("prueba@oscgre.com"),
                     Subject = subject,
                     Body = body,
                     IsBodyHtml = true,
