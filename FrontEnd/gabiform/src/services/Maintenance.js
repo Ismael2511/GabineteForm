@@ -37,6 +37,17 @@ const Maintenance = {
     // 3. ANCHOR PUT / PATCH Methods
 
     // 4. ANCHOR DELETE / INACTIVATE Methods
+
+    async inactivateItem(method,element) {
+        const item = await this.getById(method,element);
+        return new Promise(resolve => {
+            ApiService.post(API_URL + method + item)
+            .then(data => {
+                resolve(data);
+            })
+        })
+        
+    }
 }
 
 export default Maintenance;

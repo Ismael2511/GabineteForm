@@ -24,6 +24,7 @@ export const BaseView = {
                 alert(new Error(err))
                 location.reload()
             });
-        }
+        },
+        
     }
 }
