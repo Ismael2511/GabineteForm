@@ -35,9 +35,6 @@
 
 <script>
 export default({
-    props:{
-        mdata: Object,
-        mdata2: Object
-    }
+    props:{ mdata: Object }
 })
 </script>
